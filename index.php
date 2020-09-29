@@ -5,14 +5,14 @@
      
     
  
-    if(isset($_POST['nameN'], $_POST['phone']) && !empty($_POST['nameN']) && !empty(['phone'])){
+    if(isset($_POST['namen'], $_POST['phone']) && !empty($_POST['namen']) && !empty(['phone'])){
       
       
-        $name = $_POST['nameN'];
+        $name = $_POST['namen'];
         $phone = $_POST['phone'];
         $comment = $_POST['comment']; 
 
-        $sql = "INSERT INTO comments (nameN, phone, comment) VALUES ('";
+        $sql = "INSERT INTO comments (namen, phone, comment) VALUES ('";
         $sql .= $name . "', '" . $phone . "', '" . $comment . "')";
         if(mysqli_query($conn, $sql)){
             // header("Location:index.php#list-group");
@@ -441,7 +441,7 @@
                                 <img src="content/iconCat.png" class="align-self-center mr-3" alt="Comment">
                                 <div class="media-body">
                                     <h5 class="mt-0 mb-1">
-                                        <?php echo $comment['nameN'] . " (" . $comment['phone'] . ") "; ?>
+                                        <?php echo $comment['namen'] . " (" . $comment['phone'] . ") "; ?>
 
                                     </h5>
                                      <?php echo $comment['comment']?> 
@@ -463,7 +463,7 @@
                     <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
                         <form action="" method="post">
                             <input type="hidden" name="id" />
-                            <input class="form-control border-300 mt-3" name="nameN" type="text" aria-label="Name" placeholder="First and second name" class="form-control" required>
+                            <input class="form-control border-300 mt-3" name="namen" type="text" aria-label="Name" placeholder="First and second name" class="form-control" required>
 
 
                             <input id="phone-num" class="form-control border-300 mt-3" name="phone" value="" type="text" aria-label="Phone" placeholder="Phone" class="form-control" required>
