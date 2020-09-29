@@ -1,5 +1,5 @@
 <?php
     if(isset($conn)){
-        mysqli_close($conn);
+        pg_close($conn);
     }
 ?>
