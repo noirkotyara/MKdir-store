@@ -18,7 +18,7 @@
             // header("Location:index.php#list-group");
             $sql3 = "SELECT * FROM comments";
             $comments = pg_query($conn, $sql3);
-            // echo "Correct!";
+            echo "Correct!";
          }
     
     
