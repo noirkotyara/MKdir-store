@@ -14,10 +14,10 @@
 
         $sql = "INSERT INTO comments (namen, phone, comment) VALUES ('";
         $sql .= $name . "', '" . $phone . "', '" . $comment . "')";
-        if(mysqli_query($conn, $sql)){
+        if(pg_query($conn, $sql)){
             // header("Location:index.php#list-group");
             $sql3 = "SELECT * FROM comments";
-            $comments = mysqli_query($conn, $sql3);
+            $comments = pg_query($conn, $sql3);
             // echo "Correct!";
          }
     
@@ -37,16 +37,16 @@
         
         $sqlstore = "INSERT INTO requeststore (nameNstore, phonestore, orderstore, sumNstore) VALUES ('";
         $sqlstore .= $namestore . "', '" . $phonestore . "', '" . $list . "', '" . $sum . "')";
-        mysqli_query($conn, $sqlstore);
+        pg_query($conn, $sqlstore);
         
     }
     
     
-    $a = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM `comments`"));//count of rows
+    $a = pg_num_rows(pg_query($conn,"SELECT * FROM `comments`"));//count of rows
     if($a!=0){
         
         $sql2 = "SELECT * FROM comments";
-        $comments = mysqli_query($conn, $sql2);
+        $comments = pg_query($conn, $sql2);
     }
  
 ?> 
@@ -432,7 +432,7 @@
                         <ul class="list-unstyled">
                             <?php
                         if($a!=0){
-                        while($comment = mysqli_fetch_assoc($comments)){
+                        while($comment = pg_fetch_assoc($comments)){
                             
                                 
                     ?>
@@ -451,7 +451,7 @@
                         </ul>
                          <?php 
                         }
-                        mysqli_free_result($comments);
+                        pg_free_result($comments);
                     }
                     else{
                         echo '<h2>No comments yet</h2>';
