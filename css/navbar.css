@@ -187,7 +187,7 @@ nav.scroll div.main_list-2 ul li:hover {
         transition: all 0.4s;
     }
     nav.fixed div.show {
-        height: 160px;
+        height: 120px;
     }
     nav.fixed div.main_list ul,
     nav.fixed div.main_list-2 ul {
@@ -218,7 +218,7 @@ nav.scroll div.main_list-2 ul li:hover {
         transition: all 0.4s;
     }
     nav.scroll div.show {
-        height: 160px;
+        height: 120px;
     }
     nav.scroll div.main_list ul,
     nav.scroll div.main_list-2 ul {
