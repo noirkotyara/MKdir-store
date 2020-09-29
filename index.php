@@ -19,6 +19,8 @@
             $sql3 = "SELECT * FROM comments";
             $comments = pg_query($conn, $sql3);
             echo "Correct!";
+         }else{
+            echo "Uncorrect!";
          }
     
     
