@@ -11,7 +11,7 @@
         $name = $_POST['namen'];
         $phone = $_POST['phone'];
         $comment = $_POST['comment']; 
-        $conn = pg_connect("host=ec2-54-166-251-173.compute-1.amazonaws.com port=5432 dbname=d8lld96ssve5u user=qfjvfpkrdfgsdc password=39065255c1d33631bf6189b29aecf08492db721b757a1a385606ff327974710c");
+        
 
         $sql = "INSERT INTO comments (namen, phone, comment) VALUES ('";
         $sql .= $name . "', '" . $phone . "', '" . $comment . "')";
