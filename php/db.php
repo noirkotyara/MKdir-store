@@ -26,6 +26,12 @@
     //   echo 'Connection failed: ' . $e->getMessage();
     //   }
     $conn = pg_connect("host=ec2-54-166-251-173.compute-1.amazonaws.com port=5432 dbname=d8lld96ssve5u user=qfjvfpkrdfgsdc password=39065255c1d33631bf6189b29aecf08492db721b757a1a385606ff327974710c");
+    if($conn){
+        echo "Correct";
+
+    }else{
+        echo "Uncorrect";
+    }
     // $db = parse_url(getenv('DATABASE_URL'));
     // $db["path"] = ltrim($db["path"], "/");
     // $conn = pg_connect(getenv("DATABASE_URL"));
