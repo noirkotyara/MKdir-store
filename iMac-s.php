@@ -2,58 +2,58 @@
     require_once('php/db.php');
     require_once('php/functions.php');
 
-      
+     
+    
  
-    if(isset($_POST['nameN'], $_POST['phone']) && !empty($_POST['nameN']) && !empty(['phone'])){
+    if(isset($_POST['namen'], $_POST['phone']) && !empty($_POST['namen']) && !empty(['phone'])){
       
       
-            $name = $_POST['nameN'];
-            $phone = $_POST['phone'];
-            $comment = $_POST['comment']; 
-
-            $sql = "INSERT INTO comments (nameN, phone, comment) VALUES ('";
-            $sql .= $name . "', '" . $phone . "', '" . $comment . "')";
-            if(mysqli_query($conn, $sql)){
-                // header("Location:index.php#list-group");
-                $sql3 = "SELECT * FROM comments";
-                $comments = mysqli_query($conn, $sql3);
-                // echo "Correct!";
-             }
+        $name = $_POST['namen'];
+        $phone = $_POST['phone'];
+        $comment = $_POST['comment']; 
         
+
+        $sql = "INSERT INTO comments (namen, phone, comment) VALUES ('";
+        $sql .= $name . "', '" . $phone . "', '" . $comment . "')";
+        if(pg_query($conn, $sql)){
+            // header("Location:index.php#list-group");
+            $sql3 = "SELECT * FROM comments";
+            $comments = pg_query($conn, $sql3);
+            // echo "Correct!";
+        }
+        //  else{
+        //     echo "Uncorrect!";
+        //  }
+    
+    
+}
+    
+    if(isset($_POST['namenstore'], $_POST['phonestore']) && !empty($_POST['namenstore']) && !empty(['phonestore'])){
+        $namestore = $_POST['namenstore'];
+        $phonestore = $_POST['phonestore'];
+        $list = $_POST['orderstore'];
+        $sum = $_POST['sumnstore'];
+      
+        // echo $namestore;
+        // echo $phonestore;
+        // echo $sum;
+        // echo $list;
+        
+        $sqlstore = "INSERT INTO requeststore (namenstore, phonestore, orderstore, sumnstore) VALUES ('";
+        $sqlstore .= $namestore . "', '" . $phonestore . "', '" . $list . "', '" . $sum . "')";
+        pg_query($conn, $sqlstore);
         
     }
-        
-        if(isset($_POST['nameNstore'], $_POST['phonestore']) && !empty($_POST['nameNstore']) && !empty(['phonestore'])){
-            $namestore = $_POST['nameNstore'];
-            $phonestore = $_POST['phonestore'];
-            $list = $_POST['orderstore'];
-            $sum = $_POST['sumNstore'];
-          
-            // echo $namestore;
-            // echo $phonestore;
-            // echo $sum;
-            // echo $list;
-            
-            $sqlstore = "INSERT INTO requeststore (nameNstore, phonestore, orderstore, sumNstore) VALUES ('";
-            $sqlstore .= $namestore . "', '" . $phonestore . "', '" . $list . "', '" . $sum . "')";
-            // echo $sqlstore;
-            mysqli_query($conn, $sqlstore);
-            
-        }
-    
-       
-
-       
     
     
-    $a = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM `comments`"));//count of rows
+    $a = pg_num_rows(pg_query($conn,"SELECT * FROM comments"));//count of rows
     if($a!=0){
         
         $sql2 = "SELECT * FROM comments";
-        $comments = mysqli_query($conn, $sql2);
+        $comments = pg_query($conn, $sql2);
     }
  
-?> 
+?>
     <!doctype html>
     <html lang="en">
 
@@ -291,7 +291,7 @@
                             <ul class="list-unstyled">
                                 <?php
                         if($a!=0){
-                        while($comment = mysqli_fetch_assoc($comments)){
+                        while($comment = pg_fetch_assoc($comments)){
                             
                                 
                     ?>
@@ -300,7 +300,7 @@
                                         <img src="content/iconCat.png" class="align-self-center mr-3" alt="Comment">
                                         <div class="media-body">
                                             <h5 class="mt-0 mb-1">
-                                                <?php echo $comment['nameN'] . " (" . $comment['phone'] . ") "; ?>
+                                                <?php echo $comment['namen'] . " (" . $comment['phone'] . ") "; ?>
 
                                             </h5>
                                             <?php echo $comment['comment']?>
@@ -310,7 +310,7 @@
                             </ul>
                             <?php 
                         }
-                        mysqli_free_result($comments);
+                        pg_free_result($comments);
                     }
                     else{
                         echo '<h2>No comments yet</h2>';

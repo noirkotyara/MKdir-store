@@ -2,18 +2,18 @@
     require_once('php/db.php');
     require_once('php/functions.php');
     $id=$_GET['id'];
-    if(isset($_POST['nameNstore'], $_POST['phonestore']) && !empty($_POST['nameNstore']) && !empty(['phonestore'])){
-        $namestore = $_POST['nameNstore'];
+    if(isset($_POST['namenstore'], $_POST['phonestore']) && !empty($_POST['namenstore']) && !empty(['phonestore'])){
+        $namestore = $_POST['namenstore'];
         $phonestore = $_POST['phonestore'];
         $list = $_POST['orderstore'];
-        $sum = $_POST['sumNstore'];
+        $sum = $_POST['sumnstore'];
         // $id = $_POST['idstore'];
         // echo "ID is " . $id . "<br>";
         $sqlstore = "UPDATE requeststore SET ";
-        $sqlstore .= "nameNstore ='" . $namestore ."',";
+        $sqlstore .= "namenstore ='" . $namestore ."',";
         $sqlstore .= "phonestore ='" . $phonestore ."',";
         $sqlstore .= "orderstore ='" . $list ."',";
-        $sqlstore .= "sumNstore ='" . $sum ."'";
+        $sqlstore .= "sumnstore ='" . $sum ."'";
         $sqlstore .= "WHERE idstore =" . $id;
         // echo $sqlstore;
         if(mysqli_query($conn, $sqlstore)){
