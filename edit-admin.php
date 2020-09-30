@@ -60,7 +60,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap" rel="stylesheet">
 
-    <body style="opacity: 0;transition: .9s;">
+    <body >
         <img id="admin-head-bl" src="content/home/admin-head.png" width="100%" alt="admin-head">
         <h1 class="text-center">Order</h1>
   
@@ -95,11 +95,7 @@
         
         <!-- NEW -->
         
-        <script>
-        $(document).ready(function() {    
-            $("body").css("opacity", "1");
-        });
-    </script>
+     
     </body>
 
     </html>
