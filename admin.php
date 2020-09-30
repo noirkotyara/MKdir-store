@@ -6,7 +6,7 @@
     
     
          $sqlstore = "SELECT * FROM requeststore";
-         $requeststore = mysqli_query($conn, $sqlstore);
+         $requeststore = pg_query($conn, $sqlstore);
         
 ?>
 
@@ -43,13 +43,13 @@
          <?php  while($item = mysqli_fetch_assoc($requeststore)){ ?>
             <tr>
                
-                <td id="name" class="right-border" ><?php echo $item['nameNstore'] ?> </td>
+                <td id="name" class="right-border" ><?php echo $item['namenstore'] ?> </td>
                 <td><a style="float:right;" href=<?php echo 'delete-admin.php?id=' . $item['idstore'];?>><div id="delete-but" ></div></a> <a style="float:right;" href=<?php echo 'edit-admin.php?id=' . $item['idstore'];?>> <img src="/content/home/edit2.png" width=35 height=35 alt="edit"> </a></td>
             
             </tr>   
             <tr style="border-bottom: 10px solid antiquewhite;">
                 <td id="phoneStore" class="right-border" style="font-size:1.5em;"><?php echo $item['phonestore'] ?></td>
-                <td class="left-border"><?php echo $item['orderstore']?> <p style="border-top:2px solid black;"><?php echo  $item['sumNstore'] . " USD"?></p> </td>
+                <td class="left-border"><?php echo $item['orderstore']?> <p style="border-top:2px solid black;"><?php echo  $item['sumnstore'] . " USD"?></p> </td>
             </tr> 
             <!-- <tr>
             <td></td>

@@ -16,7 +16,7 @@
         $sqlstore .= "sumnstore ='" . $sum ."'";
         $sqlstore .= "WHERE idstore =" . $id;
         // echo $sqlstore;
-        if(mysqli_query($conn, $sqlstore)){
+        if(pg_query($conn, $sqlstore)){
             // echo 'Correct!';
             header("Location: admin.php");
         }
@@ -27,10 +27,10 @@
     }
     
     $sqlstore = "SELECT * FROM requeststore WHERE idstore='" . $id . "' LIMIT 1";
-    $requeststore = mysqli_query($conn, $sqlstore);
+    $requeststore = pg_query($conn, $sqlstore);
    
-    $item = mysqli_fetch_assoc($requeststore);
-    mysqli_free_result($requeststore);
+    $item = pg_fetch_assoc($requeststore);
+    pg_free_result($requeststore);
 
 
         //  $sqlstore = "SELECT * FROM requeststore";
@@ -67,8 +67,8 @@
         
                 <form id="store-edit" method="post" style="margin:5%; font-size:2em;">
                     <input type="hidden" name="idstore" />
-                    <input style="font-size:1.5em;" class="form-control border-300 mt-3" name="nameNstore" value="<?php echo $item['nameNstore'] ?>" type="text" aria-label="Name" placeholder="First and second name" class="form-control" required>
-                    <input type="" id="" class="form-control border-300 mt-3" name="sumNstore" value="<?php echo  $item['sumNstore'] ?>" aria-label="Price" placeholder="Price" class="form-control" >
+                    <input style="font-size:1.5em;" class="form-control border-300 mt-3" name="namenstore" value="<?php echo $item['namenstore'] ?>" type="text" aria-label="Name" placeholder="First and second name" class="form-control" required>
+                    <input type="" id="" class="form-control border-300 mt-3" name="sumnstore" value="<?php echo  $item['sumnstore'] ?>" aria-label="Price" placeholder="Price" class="form-control" >
                     <input type="" id="" class="form-control border-300 mt-3" name="orderstore" value="<?php echo $item['orderstore']?> " aria-label="List" placeholder="List" class="form-control" >
                     <input id="phone-num2" class="form-control border-300 mt-3" name="phonestore" value="<?php echo $item['phonestore'] ?>" type="text" aria-label="Phone" placeholder="Phone" class="form-control" required>
                     
@@ -103,4 +103,8 @@
     </body>
 
     </html>
+
+    <?php
+    require_once('php/footer.php');
+?>
 
