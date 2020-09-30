@@ -40,7 +40,7 @@
             <td> Name + phone_number</td>
             <td> Order List</td>
         </tr>
-         <?php  while($item = mysqli_fetch_assoc($requeststore)){ ?>
+         <?php  while($item = pg_fetch_assoc($requeststore)){ ?>
             <tr>
                
                 <td id="name" class="right-border" ><?php echo $item['namenstore'] ?> </td>
@@ -59,7 +59,7 @@
                         
                     
 
-                <?php } mysqli_free_result($requeststore); ?>
+                <?php } pg_free_result($requeststore); ?>
         </table>
                         
     
