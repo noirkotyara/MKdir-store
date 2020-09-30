@@ -19,33 +19,34 @@
             // header("Location:index.php#list-group");
             $sql3 = "SELECT * FROM comments";
             $comments = pg_query($conn, $sql3);
-            echo "Correct!";
-         }else{
-            echo "Uncorrect!";
-         }
+            // echo "Correct!";
+        }
+        //  else{
+        //     echo "Uncorrect!";
+        //  }
     
     
 }
     
-    if(isset($_POST['nameNstore'], $_POST['phonestore']) && !empty($_POST['nameNstore']) && !empty(['phonestore'])){
-        $namestore = $_POST['nameNstore'];
+    if(isset($_POST['namenstore'], $_POST['phonestore']) && !empty($_POST['namenstore']) && !empty(['phonestore'])){
+        $namestore = $_POST['namenstore'];
         $phonestore = $_POST['phonestore'];
         $list = $_POST['orderstore'];
-        $sum = $_POST['sumNstore'];
+        $sum = $_POST['sumnstore'];
       
         // echo $namestore;
         // echo $phonestore;
         // echo $sum;
         // echo $list;
         
-        $sqlstore = "INSERT INTO requeststore (nameNstore, phonestore, orderstore, sumNstore) VALUES ('";
+        $sqlstore = "INSERT INTO requeststore (namenstore, phonestore, orderstore, sumnstore) VALUES ('";
         $sqlstore .= $namestore . "', '" . $phonestore . "', '" . $list . "', '" . $sum . "')";
         pg_query($conn, $sqlstore);
         
     }
     
     
-    $a = pg_num_rows(pg_query($conn,"SELECT * FROM `comments`"));//count of rows
+    $a = pg_num_rows(pg_query($conn,"SELECT * FROM comments"));//count of rows
     if($a!=0){
         
         $sql2 = "SELECT * FROM comments";
