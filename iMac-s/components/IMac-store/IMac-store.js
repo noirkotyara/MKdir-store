@@ -46,11 +46,7 @@ class Products {
                         <button class="products-element__btn${activeClass}" onclick="productsPage.handlerSetLocalStorage(this, '${id}');">
                             ${activeText}
                         </button>
-                        <div id="counter">
-                        <input type="button" id="buttonCountPlus" value="+">
-                        <div id="buttonCountNumber">1</div>
-                        <input type="button" id="buttonCountMinus" value="-">
-                    </div>
+                        
                     </div>
                 </div>
             </div>
