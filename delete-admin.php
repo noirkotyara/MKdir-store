@@ -3,12 +3,12 @@
 
     $id=$_GET['id'];
  
-    $sql5 = "DELETE FROM requeststore WHERE idstore='" . $id . "' LIMIT 1";
-    
+    $sql5 = "DELETE FROM requeststore WHERE idstore='" . $id ;
+    // . "' LIMIT 1"
     if(pg_query($conn, $sql5)){
         
         header("Location:admin.php");
-        echo "in a view of";
+        
     }
  
 ?>
