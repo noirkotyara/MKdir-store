@@ -370,7 +370,7 @@
                                         <?php echo $comment['namen'] . " (" . $comment['phone'] . ") "; ?>
 
                                     </h5>
-                                 <?php echo $comment['comment']?> -->
+                                 <?php echo $comment['comment']?> 
                                 </div>
                             </li>
 
@@ -389,7 +389,7 @@
                     <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
                         <form action="" method="post">
                             <input type="hidden" name="id" />
-                            <input class="form-control border-300 mt-3" name="nameN" type="text" aria-label="Name" placeholder="First and second name" class="form-control" required>
+                            <input class="form-control border-300 mt-3" name="namen" type="text" aria-label="Name" placeholder="First and second name" class="form-control" required>
 
 
                             <input id="phone-num" class="form-control border-300 mt-3" name="phone" value="" type="text" aria-label="Phone" placeholder="Phone" class="form-control" required>

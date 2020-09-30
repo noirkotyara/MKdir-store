@@ -323,7 +323,7 @@
                             
                             <form action="" method="post">
                                 <input type="hidden" value="1111" name="id" />
-                                <input class="form-control border-300 mt-3" name="nameN" type="text" aria-label="Name" placeholder="First and second name" class="form-control" required>
+                                <input class="form-control border-300 mt-3" name="namen" type="text" aria-label="Name" placeholder="First and second name" class="form-control" required>
 
 
                                 <input id="phone-num" class="form-control border-300 mt-3" name="phone" value="" type="text" aria-label="Phone" placeholder="Phone" class="form-control" required>
