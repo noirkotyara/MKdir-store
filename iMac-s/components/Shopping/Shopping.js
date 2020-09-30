@@ -93,15 +93,15 @@ class Shopping {
                 
                 <tr>
                 <td class="shopping-element__sum">Sum</td>
-                <td class="shopping-element__price" name="sumNstore">${sumCatalog.toLocaleString()} USD</td>
+                <td class="shopping-element__price" name="sumnstore">${sumCatalog.toLocaleString()} USD</td>
                 </tr>
                 
                 </table>
                 
                 <form id="store" method="post">
                     <input type="hidden" value="2222" name="idstore" />
-                    <input class="form-control border-300 mt-3" name="nameNstore" type="text" aria-label="Name" placeholder="First and second name" class="form-control" required>
-                    <input type="hidden" id="" class="form-control border-300 mt-3" name="sumNstore" value="${sumCatalog.toLocaleString()}" aria-label="Price" placeholder="Price" class="form-control" >
+                    <input class="form-control border-300 mt-3" name="namenstore" type="text" aria-label="Name" placeholder="First and second name" class="form-control" required>
+                    <input type="hidden" id="" class="form-control border-300 mt-3" name="sumnstore" value="${sumCatalog.toLocaleString()}" aria-label="Price" placeholder="Price" class="form-control" >
                     <input type="hidden" id="" class="form-control border-300 mt-3" name="orderstore" value="${catalogList}" aria-label="List" placeholder="List" class="form-control" >
                     <input id="phone-num2" class="form-control border-300 mt-3" name="phonestore" value="" type="text" aria-label="Phone" placeholder="Phone" class="form-control" required>
                     
