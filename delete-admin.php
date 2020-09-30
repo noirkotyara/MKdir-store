@@ -8,6 +8,7 @@
     if(pg_query($conn, $sql5)){
         
         header("Location:admin.php");
+        echo "in a view of";
     }
  
 ?>
